@@ -26,9 +26,6 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var sortSegmentBarToggle: UISegmentedControl!
     
-    //viewDidLoad is called exactly once, when the view controller is first loaded into memory. This is where you want to instantiate any instance variables and build any views that live for the entire lifecycle of this view controller. However, the view is usually not yet visible at this point.
-    //Called after the controller's view is loaded into memory.
-    
     override func viewDidLoad()
     {
         players =
@@ -55,10 +52,7 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.dataSource = self
        
     }
-    
-    //ViewWillAppear usually just to update the data on the form. So, I would use this to actually load the data from my domain into the form. it means that the iPhone is already ready to show the UIView to the user, and anything heavy you do here will impact performance in a very visible manner (like animations being delayed, etc).
-    //Notifies the view controller that its view is about to be added to a view hierarchy.
-    
+        
 //    override func viewWillAppear(animated: Bool)
 //    {
 //        orderingDataAfterAnEvent()
