@@ -43,18 +43,18 @@ class ResultsViewController: UIViewController
             wonName.text = wonNameString + " Won!"
         }
         BackToLeaderBoard.isEnabled = false
-        BackToLeaderBoard.setTitleColor(UIColor.lightGray, for: UIControlState())
+        BackToLeaderBoard.setTitleColor(UIColor.lightGray, for: UIControl.State())
         
     }
     
-    func updateProgressBar()
+    @objc func updateProgressBar()
     {
         self.progressBar.progress += 0.0001
         if self.progressBar.progress == 1.0
         {
             self.progressBar.removeFromSuperview()
             BackToLeaderBoard.isEnabled = true
-            BackToLeaderBoard.setTitleColor(UIColor.black, for: UIControlState())
+            BackToLeaderBoard.setTitleColor(UIColor.black, for: UIControl.State())
             pleaseWait.isHidden = true
             
         }

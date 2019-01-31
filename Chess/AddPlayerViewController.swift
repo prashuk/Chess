@@ -47,9 +47,9 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         toolBar.tintColor = UIColor(red: 9/255, green: 122/255, blue: 0/255, alpha: 1)
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(AddPlayerViewController.donePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(AddPlayerViewController.cancelPicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(AddPlayerViewController.donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(AddPlayerViewController.cancelPicker))
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -67,7 +67,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         if flag1 == 1
         {
-            addButton.setTitle(buttonTitle, for: UIControlState())
+            addButton.setTitle(buttonTitle, for: UIControl.State())
         }
     }
 
@@ -88,7 +88,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
             
             if (addPlayerName.text == "" || addPlayerAge.text == "" || addPlayerCountry.text == "")
             {
-                let alert = UIAlertController(title: "Error", message: "Name/Age/Country cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: "Name/Age/Country cannot be empty", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
             }
@@ -103,7 +103,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 {
                     if data.playerName == addPlayerName.text
                     {
-                        let alert = UIAlertController(title: "Player already in database", message: "Please give another name", preferredStyle: UIAlertControllerStyle.alert)
+                        let alert = UIAlertController(title: "Player already in database", message: "Please give another name", preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         present(alert, animated: true, completion: nil)
                         flag = 1
@@ -135,7 +135,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
             addPlayerAge.text = condenseWhitespaceForNumbers(addPlayerAge.text!)
             if (addPlayerName.text == "" || addPlayerAge.text == "" || addPlayerCountry.text == "")
             {
-                let alert = UIAlertController(title: "Error", message: "Name/Age/Country cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: "Name/Age/Country cannot be empty", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
             }
@@ -150,7 +150,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 {
                     if data.playerName == addPlayerName.text
                     {
-                        let alert = UIAlertController(title: "Player already in database", message: "Please give another name", preferredStyle: UIAlertControllerStyle.alert)
+                        let alert = UIAlertController(title: "Player already in database", message: "Please give another name", preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         present(alert, animated: true, completion: nil)
                         flag = 1
@@ -211,7 +211,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         addPlayerCountry.text = country[row]
     }
     
-    func donePicker(_ pickerView: UIPickerView)
+    @objc func donePicker(_ pickerView: UIPickerView)
     {
         if addPlayerCountry.text == ""
         {
@@ -220,7 +220,7 @@ class AddPlayerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         addPlayerCountry.resignFirstResponder()
     }
     
-    func cancelPicker(_ pickerView: UIPickerView)
+    @objc func cancelPicker(_ pickerView: UIPickerView)
     {
         addPlayerCountry.text = ""
         addPlayerCountry.resignFirstResponder()

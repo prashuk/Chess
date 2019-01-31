@@ -37,8 +37,8 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
             Player(playerRank: 5, playerName: "Micheal Clark", playerAge: 42, playerCountry: "Australia", playerPoints: 90, playerMatches: 110, playerVictories: 60, playerDefeats: 40, playerDraws: 10, playerDate : ["2016-08-09 18:39:45", "2016-08-09 18:39:45"], playerAgainst : ["Viswanathan Anand","Rahul Dravid"], playerResult : ["Draw","Won"])
         ]
         
-        let alert = UIAlertController(title: "Instruction", message: "1. It is a game playing between 2 unique players." + "\n\n" + "2. Tap on + button on the top right side to add a player." + "\n\n" + "3. Swipe left to edit/delete a particular player" + "\n\n" + "4. Tap on NEW GAME button to start a game." + "\n\n" + "5. Enjoy it.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Play On!", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Instruction", message: "1. It is a game playing between 2 unique players." + "\n\n" + "2. Tap on + button on the top right side to add a player." + "\n\n" + "3. Swipe left to edit/delete a particular player" + "\n\n" + "4. Tap on NEW GAME button to start a game." + "\n\n" + "5. Enjoy it.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Play On!", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
         orderingDataAfterAnEvent()
@@ -237,14 +237,14 @@ class LeaderBoardViewController: UIViewController, UITableViewDelegate, UITableV
     {
         if players.count == 0
         {
-            let alert = UIAlertController(title: "Database has no Player", message: "Please add atleast 2 players to play a match", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Database has no Player", message: "Please add atleast 2 players to play a match", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else if players.count == 1
         {
-            let alert = UIAlertController(title: "Database has only 1 Player", message: "Please add atleast 2 players to play a match", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Database has only 1 Player", message: "Please add atleast 2 players to play a match", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else

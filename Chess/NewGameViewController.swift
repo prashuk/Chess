@@ -60,9 +60,9 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         toolBar1.tintColor = UIColor(red: 9/255, green: 122/255, blue: 0/255, alpha: 1)
         toolBar1.sizeToFit()
         
-        let doneButton1 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewGameViewController.donePicker1))
-        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton1 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewGameViewController.cancelPicker1))
+        let doneButton1 = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(NewGameViewController.donePicker1))
+        let spaceButton1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton1 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(NewGameViewController.cancelPicker1))
         
         toolBar1.setItems([cancelButton1, spaceButton1, doneButton1], animated: false)
         toolBar1.isUserInteractionEnabled = true
@@ -88,9 +88,9 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         toolBar2.tintColor = UIColor(red: 9/255, green: 122/255, blue: 0/255, alpha: 1)
         toolBar2.sizeToFit()
         
-        let doneButton2 = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewGameViewController.donePicker2))
-        let spaceButton2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton2 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewGameViewController.cancelPicker2))
+        let doneButton2 = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(NewGameViewController.donePicker2))
+        let spaceButton2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton2 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(NewGameViewController.cancelPicker2))
         
         toolBar2.setItems([cancelButton2, spaceButton2, doneButton2], animated: false)
         toolBar2.isUserInteractionEnabled = true
@@ -165,7 +165,7 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     
-    func donePicker1(_ pickerView: UIPickerView)
+    @objc func donePicker1(_ pickerView: UIPickerView)
     {
         if player1.text == ""
         {
@@ -191,18 +191,18 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         {
             messageLabel.text = "Select Players"
             StartButton.isEnabled = false
-            StartButton.setTitleColor(UIColor.lightGray, for: UIControlState())
+            StartButton.setTitleColor(UIColor.lightGray, for: UIControl.State())
         }
         else
         {
             messageLabel.text = "Start Play"
             StartButton.isEnabled = true
-            StartButton.setTitleColor(UIColor.black, for: UIControlState())
+            StartButton.setTitleColor(UIColor.black, for: UIControl.State())
         }
         print(runForPlayer1)
         
     }
-    func donePicker2(_ pickerView: UIPickerView)
+    @objc func donePicker2(_ pickerView: UIPickerView)
     {
         if player2.text == ""
         {
@@ -228,19 +228,19 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         {
             messageLabel.text = "Select Players"
             StartButton.isEnabled = false
-            StartButton.setTitleColor(UIColor.lightGray, for: UIControlState())
+            StartButton.setTitleColor(UIColor.lightGray, for: UIControl.State())
         }
         else
         {
             messageLabel.text = "Start Play"
             StartButton.isEnabled = true
-            StartButton.setTitleColor(UIColor.black, for: UIControlState())
+            StartButton.setTitleColor(UIColor.black, for: UIControl.State())
         }
         print(runForPlayer2)
         
     }
     
-    func cancelPicker1(_ pickerView: UIPickerView)
+    @objc func cancelPicker1(_ pickerView: UIPickerView)
     {
         player1.resignFirstResponder()
         player1.text = ""
@@ -259,9 +259,9 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         namePlayer2 = nameXXX
         StartButton.isEnabled = false
         messageLabel.text = "Select Players"
-        StartButton.setTitleColor(UIColor.lightGray, for: UIControlState())
+        StartButton.setTitleColor(UIColor.lightGray, for: UIControl.State())
     }
-    func cancelPicker2(_ pickerView: UIPickerView)
+    @objc func cancelPicker2(_ pickerView: UIPickerView)
     {
         player2.resignFirstResponder()
         player2.text = ""
@@ -280,7 +280,7 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         messageLabel.text = "Select Players"
         namePlayer1 = nameYYY
         StartButton.isEnabled = false
-        StartButton.setTitleColor(UIColor.lightGray, for: UIControlState())
+        StartButton.setTitleColor(UIColor.lightGray, for: UIControl.State())
     }
     
     
@@ -359,7 +359,7 @@ class NewGameViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         player2.text = ""
         messageLabel.text = "Select Players"
         StartButton.isEnabled = false
-        StartButton.setTitleColor(UIColor.lightGray, for: UIControlState())
+        StartButton.setTitleColor(UIColor.lightGray, for: UIControl.State())
         namePlayer1 = namePlayerAll
         namePlayer2 = namePlayerAll
     }
